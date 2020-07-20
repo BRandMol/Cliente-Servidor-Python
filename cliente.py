@@ -1,43 +1,22 @@
-#!/usr/bin/python
-# -*- coding: utf-8 -*-
-# Programa Cliente
+host = '192.168.122.214'
+port = 9090
 
 import socket
-import sys
 
-if len(sys.argv) != 3:
-    print ("Agregar la IP del servidor y el puerto donde se ofrece el servicio.")
-    sys.exit(0)
+obj = socket.socket()
 
-IP = sys.argv[1]
-PUERTO = int(sys.argv[2])
+obj.connect((host, port))
+print("Conectado al servidor")
 
-print ("\nConectandose al servidor ", IP, " en el puerto ", PUERTO, " ...")
+while True:
 
-try:
-    socket_cliente = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-    socket_cliente.connect((IP, PUERTO))
-except:
-    print ("No se puede conectar con el servidor.", IP, " en el puerto ", PUERTO)
-    sys.exit(0)
+    mens = input("Mensaje desde Cliente a Servidor >> ")
 
-print ("\nConectado, escriba finalizar() para terminar la conección.\n")
+    obj.send(mens.encode('ascii'))
 
-try:
-    while True:
-        mensaje = str(raw_input("Yo >> "))
-        socket_cliente.send(mensaje.encode("utf-8"))
-        if mensaje == "finalizar()":
-            break
-        recibido = socket_cliente.recv(1024)
-        print ("Servidor >> " + recibido)
+    recibido = obj.recv(1024)
+    print(recibido)
 
-except socket.error:
-    print ("Se perdio la conexion con el servidor.")
-except KeyboardInterrupt:
-    print ("\nSe interrunpio el cliente con un Control_C.")
+obj.close()
 
-finally:
-    print ("Terminando conexion con el servidor ...")
-    socket_cliente.close()
-    print ("Conexion con el servidor terminado.")
+print("Conexión cerrada")
