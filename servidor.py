@@ -1,5 +1,22 @@
 import socket
 
+def get_unity(s):
+	unities = {
+		"km": "kilometros",
+		"m": "metros",
+		"dm": "decimetros",
+		"cm": "centimetros",
+		"mm": "milimetros",
+		"micron": "micrometros",
+		"nm": "nanometros",
+        "mi": "millas",
+        "yd": "yardas",
+        "ft": "pies",
+        "in": "pulgadas",
+        "Nm": "millas nauticas"
+	}
+	return unities[s]
+
 def convert(a, b, c):
     values = {
         "km": 1000.0,
@@ -31,7 +48,7 @@ while True:
 
 	recibido = cli.recv(1024)
 
-	print("Recibo conexion de la IP: " + str(addr[0]) + " Puerto: " + str(addr[1]))
+	print("Recibo conexion de la IP: " + str(addr[0]) + " Puerto: " + str(addr[1])) + " " + get_unity(data[3])
 
 	data= recibido.decode("utf-8").split()
 	msg_toSend = str(convert(int(data[0]),data[1],data[3]))
