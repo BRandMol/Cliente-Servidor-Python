@@ -27,7 +27,7 @@ def get_unity(s):
         "Gm": "gigametros",
         "Tm": "terametros",
         "Pm": "petametros",
-        "Em": "Exametros",
+        "Em": "exametros",
         "Zm": "zettametros",
         "Ym": "yottametros",
 

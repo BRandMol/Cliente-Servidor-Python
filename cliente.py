@@ -26,7 +26,7 @@ def menu():
         "Gm": "gigametros",
         "Tm": "terametros",
         "Pm": "petametros",
-        "Em": "Exametros",
+        "Em": "exametros",
         "Zm": "zettametros",
         "Ym": "yottametros",
         
