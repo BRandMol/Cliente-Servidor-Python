@@ -18,7 +18,7 @@ def get_unity(s):
         "Nm": "millas nauticas",
 
         "legua": "leguas",
-        "ln": "legua nauticas",
+        "ln": "leguas nauticas",
 
         "dam": "decametros",
         "hm": "hectometros",

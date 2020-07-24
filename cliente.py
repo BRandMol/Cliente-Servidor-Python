@@ -18,7 +18,7 @@ def menu():
         "Nm": "millas nauticas",
 
         "legua": "leguas",
-        "ln": "legua nauticas",
+        "ln": "leguas nauticas",
 
         "dam": "decametros",
         "hm": "hectometros",
