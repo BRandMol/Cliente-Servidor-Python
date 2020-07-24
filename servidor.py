@@ -1,4 +1,5 @@
 import socket
+import sys
 
 def get_unity(s):
 	unities = {
@@ -14,6 +15,7 @@ def get_unity(s):
         "ft": "pies",
         "in": "pulgadas",
         "Nm": "millas nauticas"
+
 	}
 	return unities[s]
 
@@ -29,29 +31,56 @@ def convert(a, b, c):
         "mi": 1609.34,
         "yd": 0.9144,
         "ft": 0.3048,
-        "in":0.0254,
+        "in": 0.0254,
         "Nm": 1852.0
     }
 
     return (values[b] * a) / values[c]
 
+
 ser = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
-ser.bind(('192.168.122.214', 9090))
+ser.bind((sys.argv[1], int(sys.argv[2])))
 
 ser.listen(1)
 
-cli, addr = ser.accept()
+try:
+    while True:
+        print ("Esperando conexión de un cliente ...")
+        cli, addr = ser.accept()
+        print ("Cliente conectado desde: ", addr)
+        print("Recibo conexion de la IP: " + str(addr[0]) + " Puerto: " + str(addr[1]))
 
-while True:
+        while True:
+            try:
+                recibido = cli.recv(1024)
+                if recibido == "finalizar":
+                    print ("Cliente a finalizo la conexion.")
+                    print ("Cerrando la conexion con el cliente ...")
+                    cli.close()
+                    print ("Conexion con el cliente cerrado.")
+                    break
+                data = recibido.decode("utf-8").split()
+                if len(data) == 4:
+                	msg_toSend = str(convert(int(data[0]),data[1],data[3])) + " " + get_unity(data[3])
+                	cli.send(msg_toSend.encode('ascii'))
+                else:
+                	break
 
-	recibido = cli.recv(1024)
-
-	print("Recibo conexion de la IP: " + str(addr[0]) + " Puerto: " + str(addr[1]))
-
-	data= recibido.decode("utf-8").split()
-	msg_toSend = str(convert(int(data[0]),data[1],data[3])) + " " + get_unity(data[3])
-
-	cli.send(msg_toSend.encode('ascii'))
-
-cli.close()
+            except socket.error:
+                print ("Conexion terminada abruptamente por el cliente.")
+                print ("Cerrando conexion con el cliente ...")
+                cli.close()
+                print ("Conexion con el cliente cerrado.")
+                break
+            except KeyboardInterrupt:
+                print ("\nSe interrumpio el cliente con un Control_C.")
+                print ("Cerrando conexion con el cliente ...")
+                cli.close()
+                print ("Conexion con el cliente cerrado.")
+                break
+except KeyboardInterrupt:
+    print ("\nSe interrumpio el servidor con un Control_C.")
+    print ("Cerrando el servicio ...")
+    ser.close()
+    print ("Servicio cerrado, Adios!")

@@ -1,22 +1,63 @@
-host = '192.168.122.214'
-port = 9090
-
 import socket
+import sys
+
+def menu():
+    unities = {
+        "km": "kilometros",
+        "m": "metros",
+        "dm": "decimetros",
+        "cm": "centimetros",
+        "mm": "milimetros",
+        "micron": "micrometros",
+        "nm": "nanometros",
+        "mi": "millas",
+        "yd": "yardas",
+        "ft": "pies",
+        "in": "pulgadas",
+        "Nm": "millas nauticas"
+        
+    }
+    print("\nPara realizar una transformacion debe utilizar las siguientes abreviaciones\n")
+    for x in unities:
+        print("\t" + x + ": " + unities[x])
+    print("\nDebe hacerlo mediante el siguiente formato de ejemplo:")
+    print("\n\t 100 cm a m\n")
+    print("El ejemplo anterior realizara la conversion de 100 centimetros a metros")
+    print ("\n Para terminar la conexion escriba finalizar\n")
+
+host = sys.argv[1]
+port =int(sys.argv[2])
 
 obj = socket.socket()
 
-obj.connect((host, port))
-print("Conectado al servidor")
+try:
+    obj.connect((host, port))
+    print ("\nConectandose al servidor ", host, " en el puerto ", port, " ...")
+except:
+    print ("No se puede conectar con el servidor.", host, " en el puerto ", port)
+    sys.exit(0)
+menu()
 
-while True:
 
-    mens = input("Mensaje desde Cliente a Servidor >> ")
+try:
+    while True:
+        while True:
+            mens = input("Mensaje desde Cliente a Servidor >> ")
+            if len(mens) != 0:
+                break
+        
+        obj.send(mens.encode('ascii'))
+        if mens == "finalizar":
+            break
+        recibido = obj.recv(1024)
+        print("\n\t"+recibido.decode("utf-8") + "\n")
 
-    obj.send(mens.encode('ascii'))
+except socket.error:
+    print ("Se perdio la conexion con el servidor.")
+except KeyboardInterrupt:
+    print ("\nSe interrumpio el cliente con un Control_C.")
 
-    recibido = obj.recv(1024)
-    print(recibido)
-
-obj.close()
-
-print("Conexión cerrada")
+finally:
+    print ("Terminando conexion con el servidor ...")
+    obj.close()
+    print ("Conexion con el servidor terminado.")
