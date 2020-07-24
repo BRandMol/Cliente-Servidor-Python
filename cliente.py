@@ -1,6 +1,7 @@
 import socket
 import sys
 
+# funcionalidad que perimite imprimir por pantalla las abreviaciones
 def menu():
     unities = {
         "km": "kilometros",
@@ -25,9 +26,11 @@ def menu():
     print("El ejemplo anterior realizara la conversion de 100 centimetros a metros")
     print ("\n Para terminar la conexion escriba finalizar\n")
 
+#variables que indican la IP y el PUERTO
 host = sys.argv[1]
 port =int(sys.argv[2])
 
+# variable que permitira la conexion indicando la IP y el PUERTO
 obj = socket.socket()
 
 try:
@@ -42,6 +45,7 @@ menu()
 try:
     while True:
         while True:
+            # Mensaje del cliente al servidor
             mens = input("Mensaje desde Cliente a Servidor >> ")
             if len(mens) != 0:
                 break
@@ -49,6 +53,7 @@ try:
         obj.send(mens.encode('ascii'))
         if mens == "finalizar":
             break
+        # mensaje recivido por el cliente    
         recibido = obj.recv(1024)
         print("\n\t"+recibido.decode("utf-8") + "\n")
 
