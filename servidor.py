@@ -17,6 +17,9 @@ def get_unity(s):
         "in": "pulgadas",
         "Nm": "millas nauticas",
 
+        "legua": "leguas",
+        "ln": "legua nauticas",
+
         "dam": "decametros",
         "hm": "hectometros",
         "Mm": "megametros",
@@ -51,6 +54,9 @@ def convert(a, b, c):
         "ft": 0.3048,
         "in": 0.0254,
         "Nm": 1852.0,
+
+        "legua": 4828.03,
+        "ln": 5558.0,
 
         "dam": 10.0,
         "hm": 100.0,
