@@ -1,7 +1,7 @@
 import socket
 import sys
 
-# funcionalidad que perimite imprimir por pantalla las abreviaciones
+# funcionalidad encargada de desplegar las intrucciones del programa
 def menu():
     unities = {
         "km": "kilometros",
@@ -69,7 +69,7 @@ try:
         obj.send(mens.encode('ascii'))
         if mens == "finalizar":
             break
-        # mensaje recivido por el cliente    
+        # mensaje recibido por el cliente    
         recibido = obj.recv(1024)
         print("\n\t"+recibido.decode("utf-8") + "\n")
 
