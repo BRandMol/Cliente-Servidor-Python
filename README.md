@@ -14,7 +14,7 @@ _Para ejecutar servidor.py hay que realizar lo siguiente, por consola nos ubicam
 $ python3 servidor.py 9090
 ```
 
-Donde el *3° parametro* (9090) define el puerto del servidor
+Donde el **3° parametro** (9090) define el puerto del servidor
 
 ## Ejecutando cliente.py ⌨️
 
@@ -26,9 +26,9 @@ $ python3 cliente.py 192.168.122.214 9090
 
 Donde:
 
-El *3° parametro* (192.168.122.214) define la IP del servidor a la cual se va a conectar el cliente
+El **3° parametro** (192.168.122.214) define la IP del servidor a la cual se va a conectar el cliente
 
-El *4° parametro* (9090) define el puerto del servidor
+El **4° parametro** (9090) define el puerto del servidor
 
 _Una vez conectado_
 
@@ -67,20 +67,20 @@ _Las nomenclaturas utilizadas y las medidas que soporta_
         
 _Teniendo eso en cuenta hay que seguir el siguiente formato para lograr un buen funcionamiento y una correcta transformacion_
 
-_*1° parametro*: Cantidad_
+_**1° parametro**: Cantidad_
 
-_*2° parametro*: Unidad incial_
+_**2° parametro**: Unidad incial_
 
-_*3° parametro*: "a"_
+_**3° parametro**: "a"_
 
-_*4° parametro*: Unidad a la cual se quiere convertir_
+_**4° parametro**: Unidad a la cual se quiere convertir_
 
 _Importante: tener en consideracion la separacion por un espacio cada parametro_
 
 _Ejemplo:_
 
 ```
-$ 100 km a m
+ 100 km a m
 ```
 
 ## Construido con 🛠️
