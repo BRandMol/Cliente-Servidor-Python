@@ -35,7 +35,6 @@ def convert(a, b, c):
 
     return (values[b] * a) / values[c]
 
-
 ser = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
 ser.bind(('192.168.122.214', 9090))
@@ -48,10 +47,10 @@ while True:
 
 	recibido = cli.recv(1024)
 
-	print("Recibo conexion de la IP: " + str(addr[0]) + " Puerto: " + str(addr[1])) + " " + get_unity(data[3])
+	print("Recibo conexion de la IP: " + str(addr[0]) + " Puerto: " + str(addr[1]))
 
 	data= recibido.decode("utf-8").split()
-	msg_toSend = str(convert(int(data[0]),data[1],data[3]))
+	msg_toSend = str(to_unity(to_std(int(data[0]),data[1]),data[3])) + " " + get_unity(data[3])
 
 	cli.send(msg_toSend.encode('ascii'))
 
