@@ -1,6 +1,6 @@
 # Cliente-Servidor-Python
 
-_Este proyecto realiza la conexion entre Cliente y Servidor, y su funcionalidad es la conversion de distancias_
+_Este proyecto realizá la conexión entre Cliente y Servidor, y su funcionalidad es la conversión de distancias_
 
 ### Pre-requisitos 📋
 
@@ -32,7 +32,7 @@ El **4° parametro** (9090) define el puerto del servidor
 
 _Una vez conectado_
 
-_Para utilizar la funcionalidad de conversion de distancias hay que tener lo siguiente en consideracion_
+_Para utilizar la funcionalidad de conversión de distancias hay que tener lo siguiente en consideración_
 
 _Las nomenclaturas utilizadas y las medidas que soporta_
 
@@ -65,7 +65,7 @@ _Las nomenclaturas utilizadas y las medidas que soporta_
 - zm: zeptometros
 - ym: yoctometros
         
-_Teniendo eso en cuenta hay que seguir el siguiente formato para lograr un buen funcionamiento y una correcta transformacion_
+_Teniendo eso en cuenta hay que seguir el siguiente formato para lograr un buen funcionamiento y una correcta transformación_
 
 _**1° parametro**: Cantidad_
 
@@ -75,7 +75,7 @@ _**3° parametro**: "a"_
 
 _**4° parametro**: Unidad a la cual se quiere convertir_
 
-_Importante: tener en consideracion la separacion por un espacio cada parametro_
+_Importante: tener en consideración la separación por un espacio cada parametro_
 
 _Ejemplo:_
 
