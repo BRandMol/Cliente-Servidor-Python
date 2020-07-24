@@ -17,21 +17,21 @@ def menu():
         "in": "pulgadas",
         "Nm": "millas nauticas",
 
-        "dam": "decametro",
-        "hm": "hectometro",
-        "Mm": "megametro",
-        "Gm": "gigametro",
-        "Tm": "terametro",
-        "Pm": "petametro",
-        "Em": "Exametro",
-        "Zm": "zettametro",
-        "Ym": "yottametro",
+        "dam": "decametros",
+        "hm": "hectometros",
+        "Mm": "megametros",
+        "Gm": "gigametros",
+        "Tm": "terametros",
+        "Pm": "petametros",
+        "Em": "Exametros",
+        "Zm": "zettametros",
+        "Ym": "yottametros",
         
-        "pm": "picometro",
-        "fm": "femtometro",
-        "am": "attometro",
-        "zm": "zeptometro",
-        "ym": "yoctometro"
+        "pm": "picometros",
+        "fm": "femtometros",
+        "am": "attometros",
+        "zm": "zeptometros",
+        "ym": "yoctometros"
         
     }
     print("\nPara realizar una transformacion debe utilizar las siguientes abreviaciones\n")

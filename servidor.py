@@ -3,38 +3,38 @@ import sys
 
 #Funcionalidad que perimite indicar la unidad de medida asociada
 def get_unity(s):
-	unities = {
-		"km": "kilometros",
-		"m": "metros",
-		"dm": "decimetros",
-		"cm": "centimetros",
-		"mm": "milimetros",
-		"micron": "micrometros",
-		"nm": "nanometros",
+    unities = {
+        "km": "kilometros",
+        "m": "metros",
+        "dm": "decimetros",
+        "cm": "centimetros",
+        "mm": "milimetros",
+        "micron": "micrometros",
+        "nm": "nanometros",
         "mi": "millas",
         "yd": "yardas",
         "ft": "pies",
         "in": "pulgadas",
         "Nm": "millas nauticas",
 
-        "dam": "decametro",
-        "hm": "hectometro",
-        "Mm": "megametro",
-        "Gm": "gigametro",
-        "Tm": "terametro",
-        "Pm": "petametro",
-        "Em": "Exametro",
-        "Zm": "zettametro",
-        "Ym": "yottametro",
-        
-        "pm": "picometro",
-        "fm": "femtometro",
-        "am": "attometro",
-        "zm": "zeptometro",
-        "ym": "yoctometro"
+        "dam": "decametros",
+        "hm": "hectometros",
+        "Mm": "megametros",
+        "Gm": "gigametros",
+        "Tm": "terametros",
+        "Pm": "petametros",
+        "Em": "Exametros",
+        "Zm": "zettametros",
+        "Ym": "yottametros",
 
-	}
-	return unities[s]
+        "pm": "picometros",
+        "fm": "femtometros",
+        "am": "attometros",
+        "zm": "zeptometros",
+        "ym": "yoctometros"
+
+    }
+    return unities[s]
 
 #Funcionalidad que perimite la conversion de las unidades de medida
 def convert(a, b, c):
@@ -61,7 +61,7 @@ def convert(a, b, c):
         "Em": 10.0**18,
         "Zm": 10.0**21,
         "Ym": 10.0**24,
-        
+
         "pm": 10.0**(-12),
         "fm": 10.0**(-15),
         "am": 10.0**(-18),
@@ -105,12 +105,11 @@ try:
                 data = recibido.decode("utf-8").split()
                 if len(data) == 4:
                     # variable que alamacenara la conversion de las unidades de medida entregadas por el cliente
-                	msg_toSend = str(convert(int(data[0]),data[1],data[3])) + " " + get_unity(data[3])
-                	# envia la respuesta de la conversion al cliente
+                    msg_toSend = str(convert(int(data[0]),data[1],data[3])) + " " + get_unity(data[3])
+                    # envia la respuesta de la conversion al cliente
                     cli.send(msg_toSend.encode('ascii'))
                 else:
-                	break
-
+                    break
             except socket.error:
                 print ("Conexion terminada abruptamente por el cliente.")
                 print ("Cerrando conexion con el cliente ...")
