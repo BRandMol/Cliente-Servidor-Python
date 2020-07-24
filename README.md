@@ -65,13 +65,14 @@ _Las nomenclaturas utilizadas y las medidas que soporta_
 - zm: zeptometros
 - ym: yoctometros
         
-_Ahora teniendo eso en cuenta_
-
-_hay que seguir el siguiente formato para asi lograr un buen funcionamiento y una correcta transformacion_
+_Teniendo eso en cuenta hay que seguir el siguiente formato para lograr un buen funcionamiento y una correcta transformacion_
 
 _1° parametro: Cantidad_
+
 _2° parametro: Unidad incial_
+
 _3° parametro: "a"_
+
 _4° parametro: Unidad a la cual se quiere convertir_
 
 _Importante: tener en consideracion la separacion por un espacio cada parametro_
