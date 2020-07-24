@@ -2,7 +2,7 @@
 
 _Este proyecto realizá la conexión entre Cliente y Servidor, y su funcionalidad es la conversión de distancias_
 
-### Pre-requisitos 📋
+## Pre-requisitos 📋
 
 _Python 3_
 
