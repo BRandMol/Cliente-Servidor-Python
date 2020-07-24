@@ -14,23 +14,21 @@ _Para ejecutar servidor.py hay que realizar lo siguiente, por consola nos ubicam
 $ python3 servidor.py 9090
 ```
 
-Donde:
-
-_El 3° parametro (9090) define el puerto del servidor_
+Donde el 3° parametro (9090) define el puerto del servidor
 
 ## Ejecutando cliente.py ⌨️
 
 _Para ejecutar cliente.py hay que realizar lo siguiente, por consola nos ubicamos en la carpeta del proyecto y lanzamos el siguiente comando_
 
-_El 3° parametro define la IP del servidor a la cual se va a conectar el cliente_
-
-_El 4° parametro define el puerto del servidor_
-
-Ejemplo:
-
 ```
 $ python3 cliente.py 192.168.122.214 9090
 ```
+
+Donde:
+
+El 3° parametro (192.168.122.214) define la IP del servidor a la cual se va a conectar el cliente
+
+El 4° parametro (9090) define el puerto del servidor
 
 _Una vez conectado_
 
