@@ -1,5 +1,6 @@
 import socket
 import sys
+import netifaces as ni
 
 #Funcionalidad que perimite indicar la unidad de medida asociada
 def get_unity(s):
@@ -80,8 +81,12 @@ def convert(a, b, c):
 #Creacion de un TCP/IP socket
 ser = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
+# Obtenemos la ip local
+ni.ifaddresses('ens3')
+ip = ni.ifaddresses('ens3')[ni.AF_INET][0]['addr']
+
 # Enlace del socket con la IP y el puerto
-ser.bind((sys.argv[1], int(sys.argv[2])))
+ser.bind((ip, int(sys.argv[1])))
 
 # Escuchar conexiones entrantes con el metodo listen,
 # El parametro indica el numero de conexiones entrantes que vamos a aceptar
@@ -93,6 +98,8 @@ try:
         # Instanciar objeto cli para recibir datos,
         # addr recibe la tupla de conexion: IP y puerto
         cli, addr = ser.accept()
+
+        
         print ("Cliente conectado desde: ", addr)
         print("Recibo conexion de la IP: " + str(addr[0]) + " Puerto: " + str(addr[1]))
 

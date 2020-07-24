@@ -58,6 +58,8 @@ try:
 except:
     print ("No se puede conectar con el servidor.", host, " en el puerto ", port)
     sys.exit(0)
+    
+# Llamamos a la funcion para ejecutar el menu de instrucciones
 menu()
 
 
