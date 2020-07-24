@@ -8,17 +8,15 @@ _Python 3_
 
 ## Ejecutando servidor.py ⌨️
 
-_Para ejecutarlo hay que tener en cuenta lo siguiente_
-
 _Para ejecutar servidor.py hay que realizar lo siguiente, por consola nos ubicamos en la carpeta del proyecto y lanzamos el siguiente comando_
-
-_El 3° parametro define el puerto del servidor_
-
-Ejemplo:
 
 ```
 $ python3 servidor.py 9090
 ```
+
+Donde:
+
+_El 3° parametro (9090) define el puerto del servidor_
 
 ## Ejecutando cliente.py ⌨️
 
