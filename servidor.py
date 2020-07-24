@@ -50,7 +50,7 @@ while True:
 	print("Recibo conexion de la IP: " + str(addr[0]) + " Puerto: " + str(addr[1]))
 
 	data= recibido.decode("utf-8").split()
-	msg_toSend = str(to_unity(to_std(int(data[0]),data[1]),data[3])) + " " + get_unity(data[3])
+	msg_toSend = str(convert(int(data[0]),data[1],data[3])) + " " + get_unity(data[3])
 
 	cli.send(msg_toSend.encode('ascii'))
 
