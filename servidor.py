@@ -14,7 +14,23 @@ def get_unity(s):
         "yd": "yardas",
         "ft": "pies",
         "in": "pulgadas",
-        "Nm": "millas nauticas"
+        "Nm": "millas nauticas",
+
+        "dam": "decametro",
+        "hm": "hectometro",
+        "Mm": "megametro",
+        "Gm": "gigametro",
+        "Tm": "terametro",
+        "Pm": "petametro",
+        "Em": "Exametro",
+        "Zm": "zettametro",
+        "Ym": "yottametro",
+        
+        "pm": "picometro",
+        "fm": "femtometro",
+        "am": "attometro",
+        "zm": "zeptometro",
+        "ym": "yoctometro"
 
 	}
 	return unities[s]
@@ -32,7 +48,23 @@ def convert(a, b, c):
         "yd": 0.9144,
         "ft": 0.3048,
         "in": 0.0254,
-        "Nm": 1852.0
+        "Nm": 1852.0,
+
+        "dam": 10.0,
+        "hm": 100.0,
+        "Mm": 10.0**6,
+        "Gm": 10.0**9,
+        "Tm": 10.0**12,
+        "Pm": 10.0**15,
+        "Em": 10.0**18,
+        "Zm": 10.0**21,
+        "Ym": 10.0**24,
+        
+        "pm": 10.0**(-12),
+        "fm": 10.0**(-15),
+        "am": 10.0**(-18),
+        "zm": 10.0**(-21),
+        "ym": 10.0**(-24)
     }
 
     return (values[b] * a) / values[c]

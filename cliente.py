@@ -14,7 +14,23 @@ def menu():
         "yd": "yardas",
         "ft": "pies",
         "in": "pulgadas",
-        "Nm": "millas nauticas"
+        "Nm": "millas nauticas",
+
+        "dam": "decametro",
+        "hm": "hectometro",
+        "Mm": "megametro",
+        "Gm": "gigametro",
+        "Tm": "terametro",
+        "Pm": "petametro",
+        "Em": "Exametro",
+        "Zm": "zettametro",
+        "Ym": "yottametro",
+        
+        "pm": "picometro",
+        "fm": "femtometro",
+        "am": "attometro",
+        "zm": "zeptometro",
+        "ym": "yoctometro"
         
     }
     print("\nPara realizar una transformacion debe utilizar las siguientes abreviaciones\n")
